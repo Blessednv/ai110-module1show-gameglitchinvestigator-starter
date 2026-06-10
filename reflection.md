@@ -2,11 +2,22 @@
 
 Answer each question in 3 to 5 sentences. Be specific and honest about what actually happened while you worked. This is about your process, not trying to sound perfect.
 
+
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+
+  1. I started guess gamae with 1 and it told me that hint was to go lower, but the range is from 1 to 100, I tried 0 and it told me go even lower.
+  2.  Settings Difficulty Levels:
+   easy range 1 to 20, but hard level 1 to 20 and normal 1 to 100, it not right. Attempts allowed are not right, for hard one 5 attemos, but for eassy ones 6 attemps, for rnormal 8.
+  3. After guessign correct numbret it says" You already won. Start a new game to play again." But I couddnt, it does not go to a new game. 
+  4. "In Developer Debug Info" shows wrong number of atttemos, can be zero when it should be 5,6 or 8 depending on difficulty levels. 
+  5. the app is frozeen
+  6. When I guess number larger thne 100 it tell me to go higher
+  7. 
+
 
 **Bug Reproduction Log**
 
