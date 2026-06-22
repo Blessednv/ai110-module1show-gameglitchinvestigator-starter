@@ -89,11 +89,25 @@ AI was highly effective at helping me understand the mathematical flaws in the o
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
+Every time you click a button in Streamlit, the entire Python script reruns from the top — like refreshing the page. Without st.session_state, any variable you defined (like the secret number or attempt count) gets reset to its starting value on every click, which is exactly why guesses felt random and the game kept "forgetting" what happened. st.session_state is like a small locker that survives each rerun — you put values in it once and they stick between clicks. The st.rerun() call is how you manually trigger that refresh after a state change, like resetting the game, or a "rerun" is simply the mechanism that forces the app to cycle back to the top of the script so it can display the updated data held in that memory bucket.
+
+
 ---
 
 ## 5. Looking ahead: your developer habits
 
-- What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
+- What is one habit or strategy from this project that you want to reuse in future labs or projects? (  - This could be a testing habit, a prompting strategy, or a way you used Git.)
+
+One habit I want to reuse is isolating core logic into separate functions before testing. In this project, keeping functions like check_guess, parse_guess, and get_range_for_difficulty in logic_utils.py allowed me to test them with pytest without needing to run or interact with the Streamlit interface. This saved time and made debugging much easier.
+I also want to make test-driven verification a default habit. Before this project, I thought of tests as something to write after the code was finished. Now I see tests as a tool for checking the logic while the project is still being built. By refactoring the logic into logic_utils.py and writing pytest cases right away, I caught bugs I might have missed otherwise. This strategy of separating logic from the UI is something I will definitely apply to future AI engineering projects.
+
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+
+Next time, I would give the AI one task at a time. I learned that asking Claude to “fix the bug and refactor the code into logic_utils.py” in a single prompt caused it to focus on one part of the request while silently skipping the refactor. Smaller, more focused prompts produced more reliable results.
+This taught me that AI works best when the instructions are specific, limited, and easy to verify. In future projects, I would break larger requests into smaller steps, check each result carefully, and only move on after confirming that the previous step was completed correctly.
+
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+ This project taught me that AI is an excellent "coder" but a poor "architect." It changed the way I think about AI-generated code because I learned that code can run without crashing and still be logically wrong. I now see AI as a fast first-draft coding assistant, not a finished solution; it still needs a developer to provide constraints, review the logic, test the behavior, and make sure the codebase is maintainable, modular, and verifiable. AI is a fast first draft, not a finished product.
