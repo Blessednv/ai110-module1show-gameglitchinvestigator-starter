@@ -18,14 +18,14 @@ When I first ran the game, it looked functional on the surface, but interacting 
 
 Original quick notes while working on the app:
 
-  1. I started guess gamae with 1 and it told me that hint was to go lower, but the range is from 1 to 100, I tried 0 and it told me go even lower.
-  2.  Settings Difficulty Levels:
-   easy range 1 to 20, but hard level 1 to 20 and normal 1 to 100, it not right. Attempts allowed are not right, for hard one 5 attemos, but for eassy ones 6 attemps, for rnormal 8.
+  1. I began the game by guessing 1, and the hint incorrectly instructed me to 'go lower,' despite the range being 1–100. When I tested the input 0, the game continued to prompt me to 'go lower,' confirming the hint logic was broken. 
+  2. Settings Difficulty Levels:
+   easy range 1 to 20, but hard level 1 to 20 and normal 1 to 100, it not right. Attempts allowed are not right, for hard one 5 attemos, but for easy ones 6 attemps, for rnormal 8.
   3. After guessign correct numbret it says" You already won. Start a new game to play again." But I couldnt, it does not go to a new game. 
-  4. "In Developer Debug Info" shows wrong number of atttemos, can be zero when it should be 5,6 or 8 depending on difficulty levels. 
-  5. the app is frozeen
-  6. When I guess number larger thne 100 it tell me to go higher
-  7. 
+  4. The 'Developer Debug Info' displays an incorrect number of attempts; it shows zero when it should reflect the assigned limit (5, 6, or 8) based on the chosen difficulty level. 
+  5. The application freezes during gameplay.
+  6. When I guess a number greater than 100, the game incorrectly prompts me to 'go higher'.
+
 
 
 **Bug Reproduction Log**
@@ -37,8 +37,7 @@ Document at least 3 bugs you found. Add rows as needed.
 1. | 0 | too low | go lower | 20  |
 2. | 1000| too high | go higher | 85 |
 3. |on hard level - I submit 5 | go higher/go lower | after first attemp Game over. Start a new game to try again. | |
-4. Attempts allowed are not right, for hard one 5 
-attemos, but for easy ones 6 attemps, for rnormal 8.
+4. The attempt limits were configured incorrectly: Hard difficulty allowed only 5 attempts, Easy allowed 6, and Normal allowed 8
 5. | 99800| too high | go higher | 42|
 5. Game completely frozen only after 1 game. 
 
